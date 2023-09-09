@@ -10,19 +10,46 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import FWSIcon from "./FWSIcon";
+// import {
+//   aboutUsRef,
+//   ourServicesRef,
+//   techStackRef,
+//   whyChooseFWSRef,
+//   contactUsRef,
+// } from "../PageLayout";
 
 const pages = [
-  "About Us",
-  // "Clients Feedback",
-  // "Successful Projects",
-  "Our Services",
-  // 'Get a quote',
-  "Tech Stack",
-  // "FAQ Web Services",
-  "Why choose FWS",
-  "Contact us",
-  // "What happens next?",
+  {
+    name: "About Us",
+    id: "#AboutUs",
+  },
+  {
+    name: "Our Services",
+    id: "#OurServices",
+  },
+  {
+    name: "Tech Stack",
+    id: "#TechStack",
+  },
+  {
+    name: "Why choose FWS",
+    id: "#WhyChooseFWS",
+  },
+  {
+    name: "Contact us",
+    id: "#ContactUs",
+  },
 ];
+
+// "Clients Feedback",
+// "Successful Projects",
+// "Our Services",
+// 'Get a quote',
+// "Tech Stack",
+// "FAQ Web Services",
+// "Why choose FWS",
+// "Contact us",
+// "What happens next?",
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -33,6 +60,14 @@ function NavBar() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const scrollToSection = (id) => {
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      handleCloseNavMenu();
+    }
   };
 
   return (
@@ -65,7 +100,6 @@ function NavBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
@@ -92,8 +126,11 @@ function NavBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem
+                  key={page.id}
+                  onClick={() => scrollToSection(page.id)}
+                >
+                  <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -120,11 +157,11 @@ function NavBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page.id}
+                onClick={() => scrollToSection(page.id)}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
@@ -163,4 +200,5 @@ function NavBar() {
     </AppBar>
   );
 }
+
 export default NavBar;

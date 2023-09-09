@@ -1,16 +1,29 @@
-import React from 'react'
-import Stack from '@mui/material/Stack'
-import AboutUs from './components/AboutUs'
-import OurServices from './components/OurServices'
-
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import AboutUs from "./components/AboutUs";
+import OurServices from "./components/OurServices";
+import TechStack from "./components/TechStack";
+import WhyChooseFWS from "./components/WhyChooseFWS";
+import ContactUs from "./components/ContactUs";
 
 const PageLayout = () => {
-  return (
-    <Stack spacing={0}>
-      <AboutUs />
-      <OurServices />
-      </Stack>
-  )
-}
+  const aboutUsRef = React.createRef();
+  const ourServicesRef = React.createRef();
+  const techStackRef = React.createRef();
+  const whyChooseFWSRef = React.createRef();
+  const contactUsRef = React.createRef();
 
-export default PageLayout
+  return (
+    <div>
+      <Stack spacing={0}>
+        <AboutUs aboutUsRef={aboutUsRef} />
+        <OurServices ourServicesRef={ourServicesRef}/>
+        <TechStack techStackRef={techStackRef}/>
+        <WhyChooseFWS whyChooseFWSRef={whyChooseFWSRef}/>
+        <ContactUs contactUsRef={contactUsRef}/>
+      </Stack>
+    </div>
+  );
+};
+
+export default PageLayout;

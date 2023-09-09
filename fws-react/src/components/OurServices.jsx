@@ -1,8 +1,11 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-const OurServices = () => {
+
+
+const OurServices = ({ ourServicesRef }) => {
   return (
+    <div ref={ourServicesRef} id="OurServices">
     <Box
       sx={{
         width: "100%",
@@ -31,6 +34,7 @@ const OurServices = () => {
             Our Services
           </Typography> 
     </Box>
+    </div>
   );
 };
 
