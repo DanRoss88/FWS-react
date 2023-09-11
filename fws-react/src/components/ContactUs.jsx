@@ -76,25 +76,41 @@ const ContactUs = ({ contactUsRef }) => {
         >
           <div>
             <TextField
-              id="outlined-email-input"
-              label="Email"
-              name="email"
-              value={formData.email}
-              type="email"
-              autoComplete="current-password"
-              onChange={handleChange}
-            />
-            <TextField
               id="outlined-name-input"
               label="Name"
               name="name"
               value={formData.name}
+              required
               type="name"
               autoComplete="current-password"
               onChange={handleChange}
+              backgroundColor="#1565C0"
+              
+            />
+            <TextField
+              id="outlined-email-input"
+              label="Email"
+              name="email"
+              value={formData.email}
+              required
+              type="email"
+              autoComplete="current-password"
+              onChange={handleChange}
+              backgroundColor="#1565C0"
             />
           </div>
           <div>
+            <Typography
+              sx={{
+                fontFamily: "roboto",
+                fontWeight: 700,
+                color: "white",
+                textDecoration: "none",
+              }}
+            >
+              What can we help you with?
+            </Typography>
+
             <TextField
               id="outlined-multiline-input"
               name="message"
@@ -102,7 +118,9 @@ const ContactUs = ({ contactUsRef }) => {
               multiline
               rows={10}
               value={formData.message}
+              required
               onChange={handleChange}
+              backgroundColor="#1565C0"
             />
           </div>
           <Button variant="contained" endIcon={<SendIcon />}>
