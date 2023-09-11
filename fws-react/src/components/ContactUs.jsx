@@ -1,16 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
 import { motion } from "framer-motion";
 import TextField from "@mui/material/TextField";
+import axios from "axios";
 
 const ContactUs = ({ contactUsRef }) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post("http://localhost:8000/contact", formData);
+      console.log("success");
+    } catch (err) {
+      console.log("Error submitting form", err);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <div ref={contactUsRef} id="ContactUs">
       <Box
         sx={{
           width: "100%",
-          height: "120vh",
+          height: "60vh",
           backgroundColor: "primary.dark",
         }}
       >
@@ -48,29 +72,42 @@ const ContactUs = ({ contactUsRef }) => {
           }}
           noValidate
           autoComplete="off"
+          onSubmit={handleSubmit}
         >
-          <div >
+          <div>
             <TextField
               id="outlined-email-input"
               label="Email"
-              type="password"
+              name="email"
+              value={formData.email}
+              type="email"
               autoComplete="current-password"
+              onChange={handleChange}
             />
             <TextField
               id="outlined-name-input"
               label="Name"
-              type="password"
+              name="name"
+              value={formData.name}
+              type="name"
               autoComplete="current-password"
+              onChange={handleChange}
             />
           </div>
           <div>
             <TextField
               id="outlined-multiline-input"
+              name="message"
               label="Message"
               multiline
               rows={10}
+              value={formData.message}
+              onChange={handleChange}
             />
           </div>
+          <Button variant="contained" endIcon={<SendIcon />}>
+            Submit
+          </Button>
         </Box>
       </Box>
     </div>
