@@ -1,9 +1,23 @@
 import React from 'react'
+import Button from '@mui/material/Button'
+import WaterDropIcon from '@mui/icons-material/WaterDrop';
+import { Link } from '@mui/material';
 
 const QuoteButton = () => {
   return (
-    <div>QuoteButton</div>
+    <div >
+      <Link href="#ContactUs" underline="none">
+      <Button
+        variant="contained"
+        startIcon={<WaterDropIcon />}
+        endIcon={<WaterDropIcon />}
+        sx={{marginTop: "10px", marginLeft: "10px", marginRight: "10px", marginBottom: "10px"}}
+      >
+        Request a Quote
+      </Button>
+      </Link>
+    </div>
   )
 }
 
-export default QuoteButton
+export default QuoteButton;
