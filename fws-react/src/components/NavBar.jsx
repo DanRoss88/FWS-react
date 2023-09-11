@@ -71,13 +71,17 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar sx={{
+      backgroundColor: "var(--primary-color)",
+      boxShadow: "10px 10px 10px 10px var(--quarternary-color)",
+    }} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <FWSIcon
             sx={{
               display: { xs: "none", md: "flex" },
               mr: 1,
+              backgroundColor: "--text-color",
             }}
           />
           {/* <Typography

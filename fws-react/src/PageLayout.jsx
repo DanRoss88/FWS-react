@@ -14,16 +14,20 @@ const PageLayout = () => {
   const whyChooseFWSRef = React.createRef();
   const contactUsRef = React.createRef();
 
-
   return (
     <div>
-      <Stack spacing={0}>
+      <Stack
+        spacing={0}
+        sx={{
+          backgroundColor: "var(--tertiary-color)",
+        }}
+      >
         <AboutUs aboutUsRef={aboutUsRef} />
-        <OurServices ourServicesRef={ourServicesRef}/>
-        <QuoteButton contactUsRef={contactUsRef}/>
-        <TechStack techStackRef={techStackRef}/>
-        <WhyChooseFWS whyChooseFWSRef={whyChooseFWSRef}/>
-        <ContactUs contactUsRef={contactUsRef}/>
+        <OurServices ourServicesRef={ourServicesRef} />
+        <QuoteButton contactUsRef={contactUsRef} />
+        <TechStack techStackRef={techStackRef} />
+        <WhyChooseFWS whyChooseFWSRef={whyChooseFWSRef} />
+        <ContactUs contactUsRef={contactUsRef} />
       </Stack>
     </div>
   );

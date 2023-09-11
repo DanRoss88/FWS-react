@@ -34,11 +34,16 @@ const ContactUs = ({ contactUsRef }) => {
       <Box
         sx={{
           width: "100%",
-          height: "60vh",
-          backgroundColor: "primary.dark",
+          height: "80vh",
+          backgroundColor: "var(--tertiary-color)",
         }}
       >
-        <div style={{ marginTop: "10px", backgroundColor: "primary.dark" }}>
+        <div
+          style={{
+            marginTop: "10px",
+            backgroundColor: "var(--tertiary-color)",
+          }}
+        >
           <motion.div
             style={{ originX: 0.5 }}
             whileHover={{ scale: 1.2 }}
@@ -69,6 +74,7 @@ const ContactUs = ({ contactUsRef }) => {
           component="form"
           sx={{
             "& .MuiTextField-root": { m: 1, width: "25ch" },
+            color: "white",
           }}
           noValidate
           autoComplete="off"
@@ -84,8 +90,6 @@ const ContactUs = ({ contactUsRef }) => {
               type="name"
               autoComplete="current-password"
               onChange={handleChange}
-              backgroundColor="#1565C0"
-              
             />
             <TextField
               id="outlined-email-input"
@@ -96,7 +100,6 @@ const ContactUs = ({ contactUsRef }) => {
               type="email"
               autoComplete="current-password"
               onChange={handleChange}
-              backgroundColor="#1565C0"
             />
           </div>
           <div>
@@ -120,10 +123,27 @@ const ContactUs = ({ contactUsRef }) => {
               value={formData.message}
               required
               onChange={handleChange}
-              backgroundColor="#1565C0"
+              sx={{
+                width: "80%",
+                margin: "0 auto",
+                color: "white",
+              }}
             />
           </div>
-          <Button variant="contained" endIcon={<SendIcon />}>
+          <Button
+            sx={{
+              color: "white",
+              backgroundColor: "var(--primary-color)",
+            "&:hover": {
+              backgroundColor: "var(--quinary-color)",
+              color: "var(--quaternary-color)",
+            },
+          }}
+            type="submit" 
+            variant="contained"
+            endIcon={<SendIcon />}  
+          
+          >
             Submit
           </Button>
         </Box>

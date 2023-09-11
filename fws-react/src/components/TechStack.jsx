@@ -91,10 +91,10 @@ const TechStack = ({ techStackRef }) => {
         sx={{
           width: "100%",
           height: "45vh",
-          backgroundColor: "primary.dark",
+          backgroundColor: "var(--tertiary-color)"
         }}
       >
-        <div style={{marginTop: "10px", backgroundColor: "primary.dark"}}>
+        <div style={{marginTop: "10px", backgroundColor: "var(--tertiary-color)"}}>
         <motion.div
           style={{ originX: 0.5 }}
           whileHover={{ scale: 1.2 }}

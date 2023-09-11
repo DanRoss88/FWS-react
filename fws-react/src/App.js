@@ -1,6 +1,7 @@
 
 import "./App.css";
 import Footer from "./components/Footer";
+import MultiLayerParallax from "./components/MultiLayerParallax";
 import NavBar from "./components/NavBar";
 import PageLayout from "./PageLayout";
 
@@ -10,6 +11,9 @@ function App() {
       <div className="App-Nav">
         <NavBar />
       </div>
+      <div className="App-Header">
+        <MultiLayerParallax />
+        </div>
       <div className="App-Content">
         <PageLayout />
         </div>

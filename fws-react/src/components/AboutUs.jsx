@@ -10,10 +10,10 @@ const AboutUs = ({ aboutUsRef }) => {
         sx={{
           width: "100%",
           height: "60vh",
-          backgroundColor: "primary.dark",
+          backgroundColor: "--tertiary-color",
         }}
       >
-        <div style={{ marginTop: "10px", backgroundColor: "primary.dark" }}>
+        <div style={{ marginTop: "10px", backgroundColor: "--tertiary-color" }}>
         <motion.div
           style={{ originX: 0.5 }}
           whileHover={{ scale: 1.2 }}
