@@ -9,7 +9,8 @@ const MultiLayerParallax = () => {
   });
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
 
   return (
     <div

@@ -71,10 +71,14 @@ function NavBar() {
   };
 
   return (
-    <AppBar sx={{
-      backgroundColor: "var(--primary-color)",
-      boxShadow: "10px 10px 10px 10px var(--quarternary-color)",
-    }} position="static">
+    <AppBar
+      sx={{
+        backgroundColor: "var(--primary-color)",
+        boxShadow: "10px 10px 10px 10px var(--quarternary-color)",
+      }}
+      position="absolute"
+      zIndex="100"
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <FWSIcon
